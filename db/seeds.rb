@@ -13,3 +13,11 @@ end
 5.times do
   Roadtrip.create({name: Faker::Lorem.sentence(3,false,0)})
 end
+
+UserRoadtrip.create([
+  { user_id: 1, roadtrip_id: 1},
+  { user_id: 1, roadtrip_id: 2},
+  { user_id: 2, roadtrip_id: 2},
+  { user_id: 2, roadtrip_id: 3},
+  { user_id: 2, roadtrip_id: 5}
+  ])
