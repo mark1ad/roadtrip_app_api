@@ -5,12 +5,12 @@ class RoadtripsController < ApplicationController
   def index
     @roadtrips = Roadtrip.all
 
-    render json: @roadtrips
+    render json: @roadtrips.to_json(include: :users)
   end
 
   # GET /roadtrips/1
   def show
-    render json: @roadtrip
+    render json: @roadtrip.to_json(include: :users)
   end
 
   # POST /roadtrips
