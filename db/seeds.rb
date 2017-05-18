@@ -9,3 +9,7 @@
 5.times do
   User.create({name: Faker::Name.name})
 end
+
+5.times do
+  Roadtrip.create({name: Faker::Lorem.sentence(3,false,0)})
+end
