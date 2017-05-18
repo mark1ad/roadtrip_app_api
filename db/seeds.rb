@@ -21,3 +21,10 @@ UserRoadtrip.create([
   { user_id: 2, roadtrip_id: 3},
   { user_id: 2, roadtrip_id: 5}
   ])
+
+10.times do
+  City.create({ location: Faker::Address.city + ', ' + Faker::Address.state_abbr, startdate: Faker::Time.forward(30, :morning)})
+end
+
+City.find(1).update(roadtrip_id: 1, triporder: 1)
+City.find(3).update(roadtrip_id: 1, triporder: 2)
