@@ -18,7 +18,7 @@ class RoadtripsController < ApplicationController
     @roadtrip = Roadtrip.new(roadtrip_params)
 
     if @roadtrip.save
-      render json: @roadtrip, status: :created, location: @roadtrip
+      render json: @roadtrip, status: :created
     else
       render json: @roadtrip.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class RoadtripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def roadtrip_params
-      params.require(:roadtrip).permit(:name)
+      params.require(:roadtrip).permit(:name, :description)
     end
 end
