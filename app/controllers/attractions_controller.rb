@@ -16,6 +16,7 @@ class AttractionsController < ApplicationController
   # POST /attractions
   def create
     @attraction = Attraction.new(attraction_params)
+    @attraction.city_id = params[:city_id]
 
     if @attraction.save
       render json: @attraction, status: :created, location: @attraction

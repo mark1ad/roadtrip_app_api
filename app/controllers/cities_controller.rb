@@ -10,7 +10,7 @@ class CitiesController < ApplicationController
 
   # GET /cities/1
   def show
-    render json: @city
+    render json: @city.to_json(include: :attractions)
   end
 
   # POST /cities
