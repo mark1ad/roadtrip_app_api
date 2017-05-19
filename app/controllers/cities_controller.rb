@@ -5,7 +5,7 @@ class CitiesController < ApplicationController
   def index
     @cities = City.all
 
-    render json: @cities
+    render json: @cities.to_json(include: :attractions)
   end
 
   # GET /cities/1
@@ -13,9 +13,10 @@ class CitiesController < ApplicationController
     render json: @city.to_json(include: :attractions)
   end
 
-  # POST /cities
+  # POST roadtrips/1/cities
   def create
     @city = City.new(city_params)
+    @city.roadtrip_id = params[:roadtrip_id]
 
     if @city.save
       render json: @city, status: :created

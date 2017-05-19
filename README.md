@@ -25,6 +25,8 @@ City 2 has attractions 4 and 5
 ---
 ### Routes
 
+Only non-standard routes are listed.
+
 #### Creating a roadtrip
 POST /users/1/roadtrips<br>
 Will create a new roadtrip. Will add a relationship between the user and the new roadtrip.
@@ -32,3 +34,11 @@ Will create a new roadtrip. Will add a relationship between the user and the new
 #### Deleting a roadtrip
 DELETE /users/1/roadtrips/1<br>
 will delete roadtrip and remove from join table.
+
+#### Creating a city
+POST   /roadtrips/:roadtrip_id/cities
+Create city and make relationship to roadtrip.
+
+#### Creating an attraction
+POST   /cities/:city_id/attractions<br>
+Create attraction and make relationship to city.

@@ -5,7 +5,7 @@ class RoadtripsController < ApplicationController
   def index
     @roadtrips = Roadtrip.all
 
-    render json: @roadtrips.to_json(include: :users)
+    render json: @roadtrips.to_json(include: [:users, :cities])
   end
 
   # GET /roadtrips/1
