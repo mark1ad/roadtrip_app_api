@@ -18,7 +18,7 @@ class AttractionsController < ApplicationController
     @attraction = Attraction.new(attraction_params)
 
     if @attraction.save
-      render json: @attraction, status: :created, location: @attraction
+      render json: @attraction, status: :created
     else
       render json: @attraction.errors, status: :unprocessable_entity
     end
