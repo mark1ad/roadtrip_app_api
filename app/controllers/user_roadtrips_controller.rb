@@ -18,7 +18,7 @@ class UserRoadtripsController < ApplicationController
     @user_roadtrip = UserRoadtrip.new(user_roadtrip_params)
 
     if @user_roadtrip.save
-      render json: @user_roadtrip, status: :created, location: @user_roadtrip
+      render json: @user_roadtrip, status: :created
     else
       render json: @user_roadtrip.errors, status: :unprocessable_entity
     end

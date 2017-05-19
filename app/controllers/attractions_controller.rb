@@ -19,7 +19,7 @@ class AttractionsController < ApplicationController
     @attraction.city_id = params[:city_id]
 
     if @attraction.save
-      render json: @attraction, status: :created, location: @attraction
+      render json: @attraction, status: :created
     else
       render json: @attraction.errors, status: :unprocessable_entity
     end
