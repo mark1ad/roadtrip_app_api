@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :attractions
   resources :cities
   resources :user_roadtrips
   resources :roadtrips

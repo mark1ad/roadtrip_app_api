@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
+### Database design
 
-Things you may want to cover:
+![](http://i.imgur.com/CO8XMuI.png)
 
-* Ruby version
+---
+### Seed Data
 
-* System dependencies
+All data is generated with Faker.
 
-* Configuration
+### Relationships
 
-* Database creation
+User 1 has roadtrips 1 and 2
+User 2 has roadtrips 2, 3 and 5
+User 3 has roadtrips 4
 
-* Database initialization
+Roadtrip 1 has cities 1, 2 and 3
+Roadtrip 2 has cities 4 and 5
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+City 1 has attractions 1, 2 and 3
+City 2 has attractions 4 and 5
