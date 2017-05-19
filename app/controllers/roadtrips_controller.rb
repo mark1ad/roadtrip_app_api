@@ -19,8 +19,6 @@ class RoadtripsController < ApplicationController
 
     if @roadtrip.save
       # Add to join table
-      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
-      puts @roadtrip.id
       UserRoadtrip.create(user_id: params[:user_id], roadtrip_id: @roadtrip.id)
 
       render json: @roadtrip, status: :created
@@ -38,8 +36,10 @@ class RoadtripsController < ApplicationController
     end
   end
 
-  # DELETE /roadtrips/1
+  # DELETE /users/1/roadtrips/1
   def destroy
+    @user_roadtrip = UserRoadtrip.where( user_id: params[:user_id], roadtrip_id: @roadtrip.id)
+    @user_roadtrip[0].destroy
     @roadtrip.destroy
   end
 

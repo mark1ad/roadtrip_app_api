@@ -25,7 +25,10 @@ City 2 has attractions 4 and 5
 ---
 ### Routes
 
-Creating a roadtrip
-  /users/1/roadtrips
+#### Creating a roadtrip
+POST /users/1/roadtrips<br>
+Will create a new roadtrip. Will add a relationship between the user and the new roadtrip.
 
-  Will create a new roadtrip. Will add a relationship between the user and the new roadtrip.
+#### Deleting a roadtrip
+DELETE /users/1/roadtrips/1<br>
+will delete roadtrip and remove from join table.
