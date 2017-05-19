@@ -13,11 +13,16 @@ class RoadtripsController < ApplicationController
     render json: @roadtrip.to_json(include: :users)
   end
 
-  # POST /roadtrips
+  # POST /user/1/roadtrips
   def create
     @roadtrip = Roadtrip.new(roadtrip_params)
 
     if @roadtrip.save
+      # Add to join table
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+      puts @roadtrip.id
+      UserRoadtrip.create(user_id: params[:user_id], roadtrip_id: @roadtrip.id)
+
       render json: @roadtrip, status: :created
     else
       render json: @roadtrip.errors, status: :unprocessable_entity
