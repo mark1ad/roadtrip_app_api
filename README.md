@@ -21,3 +21,11 @@ Roadtrip 2 has cities 4 and 5
 
 City 1 has attractions 1, 2 and 3<br>
 City 2 has attractions 4 and 5
+
+---
+### Routes
+
+Creating a roadtrip
+  /users/1/roadtrips
+
+  Will create a new roadtrip. Will add a relationship between the user and the new roadtrip.
