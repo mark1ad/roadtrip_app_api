@@ -15,7 +15,7 @@ end
 #############
 # Seed roadtrips and assign to user
 5.times do
-  Roadtrip.create({name: Faker::Lorem.sentence(3,false,0)})
+  Roadtrip.create({name: Faker::Lorem.sentence(3,false,0), description: Faker::Lorem.sentence})
 end
 
 UserRoadtrip.create([
