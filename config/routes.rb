@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   resources :users do
-    resources :roadtrips, only: [:create]
+    resources :roadtrips, only: [:create, :destroy]
   end
   resources :roadtrips, except: [:create]
   resources :cities do
-    resources :attractions, only: [:create]
+    resources :attractions, only: [:create, :destroy]
   end
   resources :attractions, except: [:create]
   resources :user_roadtrips
