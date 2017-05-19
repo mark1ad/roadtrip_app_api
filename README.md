@@ -3,7 +3,7 @@
 ---
 ### Database design
 
-![](http://i.imgur.com/CO8XMuI.png)
+![](http://i.imgur.com/IG1e807.png)
 
 ---
 ### Seed Data
