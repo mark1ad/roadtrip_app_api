@@ -13,7 +13,7 @@ class AttractionsController < ApplicationController
     render json: @attraction
   end
 
-  # POST /attractions
+  # POST /cities/1/attractions
   def create
     @attraction = Attraction.new(attraction_params)
     @attraction.city_id = params[:city_id]

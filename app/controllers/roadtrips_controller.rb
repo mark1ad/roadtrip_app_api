@@ -5,7 +5,7 @@ class RoadtripsController < ApplicationController
   def index
     @roadtrips = Roadtrip.all
 
-    render json: @roadtrips.to_json(include: :users)
+    render json: @roadtrips.to_json(include: [:users, :cities])
   end
 
   # GET /roadtrips/1
@@ -13,11 +13,14 @@ class RoadtripsController < ApplicationController
     render json: @roadtrip.to_json(include: :users)
   end
 
-  # POST /roadtrips
+  # POST /user/1/roadtrips
   def create
     @roadtrip = Roadtrip.new(roadtrip_params)
 
     if @roadtrip.save
+      # Add to join table
+      UserRoadtrip.create(user_id: params[:user_id], roadtrip_id: @roadtrip.id)
+
       render json: @roadtrip, status: :created
     else
       render json: @roadtrip.errors, status: :unprocessable_entity
@@ -33,8 +36,10 @@ class RoadtripsController < ApplicationController
     end
   end
 
-  # DELETE /roadtrips/1
+  # DELETE /users/1/roadtrips/1
   def destroy
+    @user_roadtrip = UserRoadtrip.where( user_id: params[:user_id], roadtrip_id: @roadtrip.id)
+    @user_roadtrip[0].destroy
     @roadtrip.destroy
   end
 
