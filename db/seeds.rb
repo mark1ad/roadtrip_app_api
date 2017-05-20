@@ -9,7 +9,7 @@
 ###############
 # Seed users
 5.times do
-  User.create({name: Faker::Name.name})
+  User.create({name: Faker::Name.name, password_digest: "password"})
 end
 
 #############
