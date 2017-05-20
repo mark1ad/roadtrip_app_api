@@ -10,7 +10,7 @@ class RoadtripsController < ApplicationController
 
   # GET /roadtrips/1
   def show
-    render json: @roadtrip.to_json(include: :users)
+    render json: @roadtrip.to_json(include: [:users, :cities])
   end
 
   # POST /user/1/roadtrips
