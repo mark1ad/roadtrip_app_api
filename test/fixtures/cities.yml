@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  startdate: 2017-05-18 14:19:06
+  triporder: 1
+
+two:
+  location: MyString
+  startdate: 2017-05-18 14:19:06
+  triporder: 1
