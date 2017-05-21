@@ -35,6 +35,8 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
+    @user_roadtrips = UserRoadtrip.where( user_id: params[:id])
+    @user_roadtrips.each { |trip| trip.destroy }
     @user.destroy
   end
 
