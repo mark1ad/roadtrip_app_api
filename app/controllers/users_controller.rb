@@ -45,6 +45,8 @@ class UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
+    @user_roadtrips = UserRoadtrip.where( user_id: params[:id])
+    @user_roadtrips.each { |trip| trip.destroy }
     @user.destroy
   end
 
@@ -56,6 +58,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name, :password_digest)
     end
 end
