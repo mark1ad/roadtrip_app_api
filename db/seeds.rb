@@ -12,6 +12,8 @@
   User.create({name: Faker::Name.name, password_digest: "password"})
 end
 
+# User.create({name: 'mark', password_digest: 'mark'})
+
 #############
 # Seed roadtrips and assign to user
 5.times do
