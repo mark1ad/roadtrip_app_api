@@ -15,7 +15,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'open-highway.herokuapp.com', 'localhost:3001'
+    origins 'https://open-highway.herokuapp.com', 'localhost:3001'
 
     resource '*',
       headers: :any,
