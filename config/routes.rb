@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :users do
+    collection do
+      post '/login', to: 'users#login'
+    end
     resources :roadtrips, only: [:create, :destroy]
   end
   resources :roadtrips, except: [:create] do

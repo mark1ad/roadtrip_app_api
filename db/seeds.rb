@@ -12,6 +12,13 @@
   User.create({name: Faker::Name.name, password_digest: "password"})
 end
 
+User.create({name: 'Mark', password: 'Mark'})
+User.create({name: 'Ellen', password: 'Ellen'})
+User.create({name: 'Dylan', password: 'Dylan'})
+
+
+# User.create({name: 'mark', password_digest: 'mark'})
+
 #############
 # Seed roadtrips and assign to user
 5.times do
@@ -21,7 +28,6 @@ end
 UserRoadtrip.create([
   { user_id: 1, roadtrip_id: 1},
   { user_id: 1, roadtrip_id: 2},
-  { user_id: 2, roadtrip_id: 2},
   { user_id: 2, roadtrip_id: 3},
   { user_id: 2, roadtrip_id: 5},
   { user_id: 3, roadtrip_id: 4}
