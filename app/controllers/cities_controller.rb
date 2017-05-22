@@ -36,6 +36,13 @@ class CitiesController < ApplicationController
 
   # DELETE /cities/1
   def destroy
+    @cities_to_update = City.where(roadtrip_id: @city.roadtrip_id)
+    @cities_to_update.each do |updated_city|
+      if updated_city.triporder > @city.triporder
+        updated_city.triporder -= 1
+        updated_city.save
+      end
+    end
     @city.destroy
   end
 
