@@ -21,7 +21,7 @@ class RoadtripsController < ApplicationController
       # Add to join table
       UserRoadtrip.create(user_id: params[:user_id], roadtrip_id: @roadtrip.id)
 
-      render json: @roadtrip, status: :created
+      render json: @roadtrip.to_json(include: [:users, :cities]), status: :created
     else
       render json: @roadtrip.errors, status: :unprocessable_entity
     end
