@@ -17,7 +17,6 @@ User.create({name: 'Ellen', password: 'Ellen'})
 User.create({name: 'Dylan', password: 'Dylan'})
 
 
-# User.create({name: 'mark', password_digest: 'mark'})
 
 #############
 # Seed roadtrips and assign to user
