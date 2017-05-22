@@ -7,6 +7,13 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
+    origins 'https://open-highway.herokuapp.com'
+    resource '*',
+    headers: :any,
+    methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+
+  allow do
     origins '*'
 
     resource '*',
@@ -14,11 +21,11 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     methods: [:get, :options, :head]
   end
 
-  allow do
-    origins 'https://open-highway.herokuapp.com', 'localhost:3001'
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
-  end
+  # allow do
+  #   origins 'https://open-highway.herokuapp.com', 'localhost:3001'
+  #
+  #   resource '*',
+  #     headers: :any,
+  #     methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  # end
 end
