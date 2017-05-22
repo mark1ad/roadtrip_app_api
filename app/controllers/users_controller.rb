@@ -2,9 +2,9 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def login
-    # console.log(params)
-    user = User.find_by(name: params[:user])
-    if user && user.authenticate(params[:user])
+
+    user = User.find_by(name: params[:user][:name])
+    if user && user.authenticate(params[:user][:password])
       render json: {status: 200, user: user}
     else
       render json: {status: 401, message: "Unauthorized"}
